@@ -105,6 +105,9 @@
     
     _buildings = buildings;
     
+    //init the _nameToID dictionary. Helps to get the row id from the name
+    _nameToID = [[NSMutableDictionary alloc] init];
+    
     //I am initializing a new loc manager to get current location for distance
     //calculations i am going to add this to the marker class
     //but for now i am going to try this code out here
@@ -132,7 +135,6 @@
     {
         NSDictionary* building = [buildings objectAtIndex:i];
         
-        
         double latitude = [[building objectForKey:@"x"] doubleValue];
         double longitude = [[building objectForKey:@"y"] doubleValue];
         
@@ -141,9 +143,11 @@
         
         CGFloat distance = [mylocation distanceFromLocation:theBuildingLocation];
         NSString *theDistance = [[NSString alloc]initWithFormat:@"%.2f",[self MetersToMiles:distance]];
-    
         
         Annotation* mapMarker = [[Annotation alloc]initWithCoordinates:theMapLocation title:[building objectForKey:@"name"] subTitle:[building objectForKey:@"type"]];
+        
+        //add item to dictionary
+        [_nameToID setObject:[building objectForKey:@"id"] forKey:[building objectForKey:@"name"]];
         
         [_theMapView addAnnotation:mapMarker];
         
@@ -154,6 +158,7 @@
 
         PlaceOfInterest *poi = [PlaceOfInterest placeOfInterestWithView:marker at:[[CLLocation alloc] initWithLatitude:latitude longitude:longitude]];
 		[placesOfInterest insertObject:poi atIndex:i];
+        
         
     }
     
@@ -186,7 +191,11 @@
     _mapOverlayView = [[MapOverlayView alloc]initWithOverlay:_mapOverlay];
     return _mapOverlayView;
 }
+
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    
+    //get the row id in the database
+    id rowID_id = [_nameToID valueForKey:[annotation title]];
     
     NSString *anID = @"PinViewID";
     MKPinAnnotationView *pinView = (MKPinAnnotationView *)[_theMapView dequeueReusableAnnotationViewWithIdentifier:anID];
@@ -194,28 +203,59 @@
     //and can be modified in the similar manner
     if (pinView == NULL) {
         pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:anID];
-        //if you want to keep the same default pin look you can change the color here
-        //based on the view.annotation.title property aka "williams" color is purple
-        //ect..
-        [pinView setPinColor:MKPinAnnotationColorPurple];
-        pinView.canShowCallout = YES;
-        pinView.animatesDrop = NO;
         
-        //Add a detail disclosure button to the callout.
-        //this is where i add a button to the pin view to give you an idea
-        //of how to do it, add a view or another button in the same manner
+        //set the color and the right button
+        if (rowID_id == NULL)
+        {
+            
+            //if you want to keep the same default pin look you can change the color here
+            //based on the view.annotation.title property aka "williams" color is purple
+            //ect..
+            [pinView setPinColor:MKPinAnnotationColorPurple];
+            pinView.canShowCallout = YES;
+            pinView.animatesDrop = NO;
+            
+            //Add a detail disclosure button to the callout.
+            //this is where i add a button to the pin view to give you an idea
+            //of how to do it, add a view or another button in the same manner
+            
+            UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+            
+            //[rightButton addTarget:self action:@selector(showTable) forControlEvents:UIControlEventTouchUpInside];
+            
+            pinView.rightCalloutAccessoryView = rightButton;
+        }
         
-        UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+        else
+        {
+            int rowID = [rowID_id intValue];
+            
+            //if you want to keep the same default pin look you can change the color here
+            //based on the view.annotation.title property aka "williams" color is purple
+            //ect..
+            [pinView setPinColor:MKPinAnnotationColorGreen];
+            pinView.canShowCallout = YES;
+            pinView.animatesDrop = NO;
+            
+            //Add a detail disclosure button to the callout.
+            //this is where i add a button to the pin view to give you an idea
+            //of how to do it, add a view or another button in the same manner
+            
+            UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+            
+            //[rightButton addTarget:self action:@selector(showTable) forControlEvents:UIControlEventTouchUpInside];
+            
+            pinView.rightCalloutAccessoryView = rightButton;
+        }
+
         
-        //[rightButton addTarget:self action:@selector(showTable) forControlEvents:UIControlEventTouchUpInside];
-        
-        pinView.rightCalloutAccessoryView = rightButton;
     }else
         pinView.annotation = annotation;
     
     return pinView;
     
 }
+
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
     
     if ([view.annotation.title isEqualToString:@"Williams"]) {
