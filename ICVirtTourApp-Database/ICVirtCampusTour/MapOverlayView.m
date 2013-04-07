@@ -18,12 +18,7 @@
     
     CGRect theRect = [self rectForMapRect:theMapRect];
     
-    //CGContextScaleCTM(context, 1.0, -1.0);
-    //CGContextTranslateCTM(context, 0.0, -theRect.size.height);
     CGContextDrawImage(context, theRect, imageRef);
-    //UIGraphicsPushContext(context);
-    //[image drawInRect:theRect blendMode:kCGBlendModeNormal alpha:1.0];
-    //UIGraphicsPopContext();
 }
 /*
 // Only override drawRect: if you perform custom drawing.

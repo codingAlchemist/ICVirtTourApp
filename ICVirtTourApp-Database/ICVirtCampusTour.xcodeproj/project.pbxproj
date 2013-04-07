@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		772BEF81170F947300D3D600 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 772BEF80170F947300D3D600 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		772BEF85170F948500D3D600 /* DBWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 772BEF84170F948500D3D600 /* DBWrapper.m */; };
+		772BEF89170F9E5E00D3D600 /* ARDetailedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772BEF87170F9E5D00D3D600 /* ARDetailedViewController.m */; };
+		772BEF8A170F9E5E00D3D600 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772BEF88170F9E5D00D3D600 /* Storyboard.storyboard */; };
+		774066971710AE0900CD91BC /* settingsImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 774066961710AE0900CD91BC /* settingsImage.png */; };
+		7740669B1710DF4700CD91BC /* VirtTourSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 774066991710DF4700CD91BC /* VirtTourSettingsViewController.m */; };
 		9C9F98251703B3A10052E5AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9F98241703B3A10052E5AA /* UIKit.framework */; };
 		9C9F98271703B3A10052E5AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9F98261703B3A10052E5AA /* Foundation.framework */; };
 		9C9F98291703B3A10052E5AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9F98281703B3A10052E5AA /* CoreGraphics.framework */; };
@@ -37,9 +43,20 @@
 		9C9F98731703BF830052E5AA /* MapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9F986D1703BF830052E5AA /* MapOverlay.m */; };
 		9C9F98741703BF830052E5AA /* MapOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9F986E1703BF830052E5AA /* MapOverlayView.m */; };
 		9C9F98761703C2C60052E5AA /* collegeMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F98751703C2C60052E5AA /* collegeMap.png */; };
+		9CAB9E7B1710E8FE00F1AF60 /* VirtTourWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB9E7A1710E8FE00F1AF60 /* VirtTourWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		772BEF7F170F947300D3D600 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		772BEF80170F947300D3D600 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		772BEF83170F948500D3D600 /* DBWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBWrapper.h; sourceTree = "<group>"; };
+		772BEF84170F948500D3D600 /* DBWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBWrapper.m; sourceTree = "<group>"; };
+		772BEF86170F9E5D00D3D600 /* ARDetailedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARDetailedViewController.h; sourceTree = "<group>"; };
+		772BEF87170F9E5D00D3D600 /* ARDetailedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARDetailedViewController.m; sourceTree = "<group>"; };
+		772BEF88170F9E5D00D3D600 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		774066961710AE0900CD91BC /* settingsImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsImage.png; sourceTree = "<group>"; };
+		774066981710DF4700CD91BC /* VirtTourSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirtTourSettingsViewController.h; sourceTree = "<group>"; };
+		774066991710DF4700CD91BC /* VirtTourSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirtTourSettingsViewController.m; sourceTree = "<group>"; };
 		9C9F98211703B3A10052E5AA /* ICVirtCampusTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICVirtCampusTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C9F98241703B3A10052E5AA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C9F98261703B3A10052E5AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -81,6 +98,8 @@
 		9C9F98701703BF830052E5AA /* MapOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOverlay.h; sourceTree = "<group>"; };
 		9C9F98711703BF830052E5AA /* MapOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOverlayView.h; sourceTree = "<group>"; };
 		9C9F98751703C2C60052E5AA /* collegeMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collegeMap.png; sourceTree = "<group>"; };
+		9CAB9E791710E8FE00F1AF60 /* VirtTourWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirtTourWebViewController.h; sourceTree = "<group>"; };
+		9CAB9E7A1710E8FE00F1AF60 /* VirtTourWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirtTourWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +124,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		772BEF7E170F946300D3D600 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				772BEF7F170F947300D3D600 /* JSONKit.h */,
+				772BEF80170F947300D3D600 /* JSONKit.m */,
+			);
+			name = JSONKit;
+			sourceTree = "<group>";
+		};
+		772BEF82170F947600D3D600 /* DBWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				772BEF83170F948500D3D600 /* DBWrapper.h */,
+				772BEF84170F948500D3D600 /* DBWrapper.m */,
+			);
+			name = DBWrapper;
+			sourceTree = "<group>";
+		};
 		9C9F98181703B3A10052E5AA = {
 			isa = PBXGroup;
 			children = (
+				774066961710AE0900CD91BC /* settingsImage.png */,
 				9C9F982A1703B3A10052E5AA /* ICVirtCampusTour */,
 				9C9F98231703B3A10052E5AA /* Frameworks */,
 				9C9F98221703B3A10052E5AA /* Products */,
@@ -143,13 +181,22 @@
 		9C9F982A1703B3A10052E5AA /* ICVirtCampusTour */ = {
 			isa = PBXGroup;
 			children = (
+				772BEF86170F9E5D00D3D600 /* ARDetailedViewController.h */,
+				772BEF87170F9E5D00D3D600 /* ARDetailedViewController.m */,
+				772BEF88170F9E5D00D3D600 /* Storyboard.storyboard */,
+				772BEF82170F947600D3D600 /* DBWrapper */,
+				772BEF7E170F946300D3D600 /* JSONKit */,
 				9C9F98691703BEBE0052E5AA /* MapFiles */,
 				9C9F98621703BD6B0052E5AA /* images */,
 				9C9F984A1703B3C90052E5AA /* ARFiles */,
 				9C9F98331703B3A10052E5AA /* VirtTourAppDelegate.h */,
 				9C9F98341703B3A10052E5AA /* VirtTourAppDelegate.m */,
+				9CAB9E791710E8FE00F1AF60 /* VirtTourWebViewController.h */,
+				9CAB9E7A1710E8FE00F1AF60 /* VirtTourWebViewController.m */,
 				9C9F983C1703B3A10052E5AA /* VirtTourViewController.h */,
 				9C9F983D1703B3A10052E5AA /* VirtTourViewController.m */,
+				774066981710DF4700CD91BC /* VirtTourSettingsViewController.h */,
+				774066991710DF4700CD91BC /* VirtTourSettingsViewController.m */,
 				9C9F983F1703B3A10052E5AA /* VirtTourViewController_iPhone.xib */,
 				9C9F98421703B3A10052E5AA /* VirtTourViewController_iPad.xib */,
 				9C9F982B1703B3A10052E5AA /* Supporting Files */,
@@ -270,6 +317,8 @@
 				9C9F98671703BD850052E5AA /* PointerPressed.png in Resources */,
 				9C9F98681703BD850052E5AA /* Ithaca_College_Campus_Map.pdf in Resources */,
 				9C9F98761703C2C60052E5AA /* collegeMap.png in Resources */,
+				772BEF8A170F9E5E00D3D600 /* Storyboard.storyboard in Resources */,
+				774066971710AE0900CD91BC /* settingsImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +338,11 @@
 				9C9F98721703BF830052E5AA /* Annotation.m in Sources */,
 				9C9F98731703BF830052E5AA /* MapOverlay.m in Sources */,
 				9C9F98741703BF830052E5AA /* MapOverlayView.m in Sources */,
+				772BEF81170F947300D3D600 /* JSONKit.m in Sources */,
+				772BEF85170F948500D3D600 /* DBWrapper.m in Sources */,
+				772BEF89170F9E5E00D3D600 /* ARDetailedViewController.m in Sources */,
+				7740669B1710DF4700CD91BC /* VirtTourSettingsViewController.m in Sources */,
+				9CAB9E7B1710E8FE00F1AF60 /* VirtTourWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +388,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Adeesha Ekanayake (98PH88Y52L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Adeesha Ekanayake (98PH88Y52L)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -349,6 +404,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "141BB841-D8E1-4D05-BEF3-2A51BA414BC5";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "141BB841-D8E1-4D05-BEF3-2A51BA414BC5";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +423,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Adeesha Ekanayake (98PH88Y52L)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -374,6 +432,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "141BB841-D8E1-4D05-BEF3-2A51BA414BC5";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -383,10 +442,14 @@
 		9C9F98481703B3A10052E5AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ICVirtCampusTour/ICVirtCampusTour-Prefix.pch";
 				INFOPLIST_FILE = "ICVirtCampusTour/ICVirtCampusTour-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -394,10 +457,14 @@
 		9C9F98491703B3A10052E5AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ICVirtCampusTour/ICVirtCampusTour-Prefix.pch";
 				INFOPLIST_FILE = "ICVirtCampusTour/ICVirtCampusTour-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -421,6 +488,7 @@
 				9C9F98491703B3A10052E5AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
