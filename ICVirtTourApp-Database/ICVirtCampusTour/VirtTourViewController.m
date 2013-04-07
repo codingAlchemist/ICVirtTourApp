@@ -114,6 +114,19 @@
     _locationManager.distanceFilter = kCLDistanceFilterNone;
     CLLocation *mylocation = [_locationManager location];
     
+    /*
+     This code was moved up so that the markers
+     could be added to the map and the AR at the same 
+     time
+     */
+    _theMapView = [[MKMapView alloc]init];
+    _theMapView.frame = [[UIScreen mainScreen]bounds];
+    _theMapView.delegate = self;
+    _theMapView.mapType = MKMapTypeStandard;
+    _theMapView.showsUserLocation = YES;
+    
+    //add map annotations for all buildings
+    
     NSMutableArray* placesOfInterest = [NSMutableArray arrayWithCapacity:buildings.count];
     for (int i=0; i<buildings.count; i++)
     {
@@ -124,8 +137,15 @@
         double longitude = [[building objectForKey:@"y"] doubleValue];
         
         CLLocation *theBuildingLocation = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+        CLLocationCoordinate2D theMapLocation = CLLocationCoordinate2DMake(latitude, longitude);
+        
         CGFloat distance = [mylocation distanceFromLocation:theBuildingLocation];
         NSString *theDistance = [[NSString alloc]initWithFormat:@"%.2f",[self MetersToMiles:distance]];
+    
+        
+        Annotation* mapMarker = [[Annotation alloc]initWithCoordinates:theMapLocation title:[building objectForKey:@"name"] subTitle:[building objectForKey:@"type"]];
+        
+        [_theMapView addAnnotation:mapMarker];
         
         ARMarker* marker = [[ARMarker alloc] initWithImage:@"Pointer.PNG" andTitle:[building objectForKey:@"name"]showDistance:theDistance];
         
@@ -139,15 +159,13 @@
     
     [arView setPlacesOfInterest:placesOfInterest];
     
-    _theMapView = [[MKMapView alloc]init];
-    _theMapView.frame = [[UIScreen mainScreen]bounds];
-    _theMapView.delegate = self;
-    _theMapView.mapType = MKMapTypeStandard;
-    _theMapView.showsUserLocation = YES;
-    
+
+    /*
+     Sorry Jason, I took out the overlay :)
+     */
     //add the campus map overlay
-    _mapOverlay = [[MapOverlay alloc]init];
-    [_theMapView addOverlay:_mapOverlay];
+    //_mapOverlay = [[MapOverlay alloc]init];
+    //[_theMapView addOverlay:_mapOverlay];
     _userLocation = _theMapView.userLocation;
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(_userLocation.location.coordinate, 1*METERS_PER_MILE, 1*METERS_PER_MILE);
