@@ -15,10 +15,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-
     
     VirtTourViewController* viewController = [[VirtTourViewController alloc] initWithNibName:@"VirtTourViewController_iPhone" bundle:nil];
     
