@@ -72,10 +72,10 @@
     [alert show];
 }
 //Helper method to convert meters to miles <- aka i got sick of doing myself
--(NSInteger)MetersToMiles:(CGFloat)meters{
-    NSInteger miles = meters * 0.000621371192237334;
-    return miles;
+-(float)MetersToMiles:(CGFloat)meters{
+    float miles = meters * 0.000621371192237334;
     
+    return miles;
 }
 - (void)viewDidLoad
 {
@@ -84,13 +84,8 @@
     //set title
     self.title = @"IC Virtual Tour";
     
-    //add extra settings button
-    
-    //UIBarButtonItem * settingsButton =
-    //[[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(showSettingsView)];
-    
     UIBarButtonItem * settingsButton =
-    [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonSystemItemAction target:self action:@selector(showSettingsView)];
+    [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(showSettingsView)];
     
     self.navigationController.navigationItem.rightBarButtonItem = settingsButton;
     
@@ -110,39 +105,6 @@
     
     _buildings = buildings;
     
-    /*
-     checking contents of dictionary
-    for (int i=0; i<buildings.count; i++)
-    {
-        NSLog(@"%@", [buildings objectAtIndex:i]);
-    }
-     */
-    
-    /*
-     old code to hard-code the locations
-    _buildingNames = [[NSMutableArray alloc]init];
-    [_buildingNames addObject:@"Williams"];
-    [_buildingNames addObject:@"Health SCiences"];
-    [_buildingNames addObject:@"Hill"];
-    [_buildingNames addObject:@"DestinyUSA"];
-    
-    CLLocationCoordinate2D poiCoords[] ={{42.422694, -76.495196},
-                                         {42.420075,-76.49806},
-                                         {42.420566,-76.497073},
-                                         {43.072855,-76.171569}};
-    
-    int numPois = sizeof(poiCoords) / sizeof(CLLocationCoordinate2D);
-    
-
-	NSMutableArray *placesOfInterest = [NSMutableArray arrayWithCapacity:numPois];
-	for (int i = 0; i < numPois; i++) {
-        ARMarker *marker = [[ARMarker alloc]initWithImage:@"Pointer.PNG" andTitle:[NSString stringWithFormat:@"%@",[_buildingNames objectAtIndex:i]]];
-		PlaceOfInterest *poi = [PlaceOfInterest placeOfInterestWithView:marker at:[[CLLocation alloc] initWithLatitude:poiCoords[i].latitude longitude:poiCoords[i].longitude]];
-		[placesOfInterest insertObject:poi atIndex:i];
-	}
-	[arView setPlacesOfInterest:placesOfInterest];
-    */
-    
     //I am initializing a new loc manager to get current location for distance
     //calculations i am going to add this to the marker class
     //but for now i am going to try this code out here
@@ -151,7 +113,6 @@
     _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     _locationManager.distanceFilter = kCLDistanceFilterNone;
     CLLocation *mylocation = [_locationManager location];
-    
     
     NSMutableArray* placesOfInterest = [NSMutableArray arrayWithCapacity:buildings.count];
     for (int i=0; i<buildings.count; i++)
@@ -164,7 +125,7 @@
         
         CLLocation *theBuildingLocation = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
         CGFloat distance = [mylocation distanceFromLocation:theBuildingLocation];
-        NSString *theDistance = [[NSString alloc]initWithFormat:@"%i",[self MetersToMiles:distance]];
+        NSString *theDistance = [[NSString alloc]initWithFormat:@"%.2f",[self MetersToMiles:distance]];
         
         ARMarker* marker = [[ARMarker alloc] initWithImage:@"Pointer.PNG" andTitle:[building objectForKey:@"name"]showDistance:theDistance];
         

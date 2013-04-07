@@ -26,7 +26,7 @@
 -(void)httpError;
 -(void)showDetailedViewWithRowId:(NSInteger)rowId;
 -(void)showSettingsView;
--(NSInteger)MetersToMiles:(CGFloat)meters;
+-(float)MetersToMiles:(CGFloat)meters;
 
 @property (nonatomic, strong) MapOverlay *mapOverlay;
 @property (nonatomic, strong) MapOverlayView *mapOverlayView;
