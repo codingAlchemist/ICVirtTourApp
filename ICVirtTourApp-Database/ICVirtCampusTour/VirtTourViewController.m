@@ -34,6 +34,38 @@
     NSLog(@"Show settings view");
 }
 
+-(void)showCurrentlySelectedDetailedView:(id) sender
+{
+    //same as the showDetailedMethod but uses a class parameter
+    //to get around the requirement for an action in the
+    //addTarget method for UIButton
+    
+    NSInteger rowId = [sender tag];
+    
+    //get the data to display the detailed view
+    NSDictionary* rowData = [_myDBWrapper getRowWithRowId:rowId andCallback:^
+                             {
+                                 [self httpError];
+                                 return;
+                             }];
+    
+    NSString* title = [rowData valueForKey:@"name"];
+    NSString* image = [rowData valueForKey:@"image"];
+    
+    NSString* text = [[_myDBWrapper getTextWithRowId:rowId andCallback:^
+                       {
+                           [self httpError];
+                           return;
+                       }] objectForKey:@"text"];
+    
+    UIStoryboard *detailedView = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    ARDetailedViewController* newView = [detailedView instantiateViewControllerWithIdentifier:@"DetailedView"];
+    
+    [self.navigationController pushViewController:newView animated:YES];
+    
+    [newView setCellDataWithName:title andImageName:image andText:text];
+}
+
 -(void)showDetailedViewWithRowId:(NSInteger)rowId
 {
     //get the data to display the detailed view
@@ -240,10 +272,11 @@
             //Add a detail disclosure button to the callout.
             //this is where i add a button to the pin view to give you an idea
             //of how to do it, add a view or another button in the same manner
-            
             UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+                        
+            [rightButton addTarget:self action:@selector(showCurrentlySelectedDetailedView:) forControlEvents:UIControlEventTouchUpInside];
             
-            //[rightButton addTarget:self action:@selector(showTable) forControlEvents:UIControlEventTouchUpInside];
+            [rightButton setTag:rowID];
             
             pinView.rightCalloutAccessoryView = rightButton;
         }

@@ -25,6 +25,7 @@
 
 -(void)httpError;
 -(void)showDetailedViewWithRowId:(NSInteger)rowId;
+-(void)showCurrentlySelectedDetailedView;
 -(void)showSettingsView;
 -(float)MetersToMiles:(CGFloat)meters;
 
