@@ -9,6 +9,7 @@
 
 #import "VirtTourViewController.h"
 #import "VirtTourWebViewController.h"
+#import "VirtTourSettingsViewController.h"
 
 //Augmented Reality headers
 #import "PlaceOfInterest.h"
@@ -32,6 +33,12 @@
 -(void)showSettingsView
 {
     NSLog(@"Show settings view");
+    
+    UIStoryboard *settingsView = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    VirtTourSettingsViewController* newView = [settingsView instantiateViewControllerWithIdentifier:@"SettingsView"];
+    
+    [self.navigationController pushViewController:newView animated:YES];
+    
 }
 
 -(void)showCurrentlySelectedDetailedView:(id) sender
