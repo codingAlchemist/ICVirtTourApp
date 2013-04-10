@@ -5,6 +5,11 @@
 
 #define MAXSIZE 100 //must be greater than number of all the markers
 
+/**
+ @author Jason Debottis, Adeesha Ekanayake
+ @brief describes an AR View
+ */
+
 @interface ARView : UIView  <CLLocationManagerDelegate> {
 }
 

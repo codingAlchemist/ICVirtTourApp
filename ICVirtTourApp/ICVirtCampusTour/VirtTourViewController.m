@@ -192,12 +192,13 @@
     return miles;
 }
 
+//bit of a clusterfuck, we need to re-order this code
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     //set title
-    self.title = @"IC Virtual Tour";
+    self.title = @"IC Looking Glass";
     
     UIBarButtonItem * settingsButton =
     [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(showSettingsView)];

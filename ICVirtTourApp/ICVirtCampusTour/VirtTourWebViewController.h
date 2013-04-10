@@ -6,6 +6,16 @@
 //  Copyright (c) 2013 IC. All rights reserved.
 //
 
+/**
+ @author Jason Debottis, Adeesha Ekanayake
+ @brief view controller for the web view
+ */
+
+/*
+ Jason, what does this view do?
+ is it redundant?
+ */
+
 #import <UIKit/UIKit.h>
 
 @interface VirtTourWebViewController : UIViewController

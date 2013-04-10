@@ -5,6 +5,12 @@
 #import <MapKit/MapKit.h>
 
 #import "VirtTourViewController.h"
+
+/**
+ @author Jason Debottis, Adeesha Ekanayake
+ @brief class for an AR Marker
+ */
+
 @class ARCoordinate;
 @class ARDetailedViewController;
 @class VirtTourViewController;

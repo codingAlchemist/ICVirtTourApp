@@ -6,6 +6,11 @@
 //  Copyright (c) 2013 IC. All rights reserved.
 //
 
+/**
+ @author Jason Debottis, Adeesha Ekanayake
+ @brief app delegate class
+ */
+
 #import <UIKit/UIKit.h>
 
 @class VirtTourViewController;

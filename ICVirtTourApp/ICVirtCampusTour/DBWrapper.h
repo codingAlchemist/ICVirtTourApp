@@ -6,6 +6,11 @@
 //  Copyright (c) 2013 Adeesha Ekanayake. All rights reserved.
 //
 
+/**
+ @author Jason Debottis, Adeesha Ekanayake
+ @brief Wrapper for Connecting to database through JSON
+ */
+
 #import <Foundation/Foundation.h>
 #import "JSONKit.h"
 

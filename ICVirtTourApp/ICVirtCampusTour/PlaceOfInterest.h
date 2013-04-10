@@ -1,3 +1,7 @@
+/**
+ @author Jason Debottis, Adeesha Ekanayake
+ @brief describes a place of interest
+ */
 
 #import <Foundation/Foundation.h>
 

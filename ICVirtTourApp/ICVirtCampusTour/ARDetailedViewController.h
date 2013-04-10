@@ -6,6 +6,11 @@
 //  Copyright (c) 2013 Adeesha Ekanayake. All rights reserved.
 //
 
+/**
+ @author Jason Debottis, Adeesha Ekanayake
+ @brief view controller for the detailed view
+ */
+
 #import <UIKit/UIKit.h>
 #import "ARMarker.h"
 

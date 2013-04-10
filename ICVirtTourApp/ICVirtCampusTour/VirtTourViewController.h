@@ -4,7 +4,12 @@
 //
 //  Created by jason debottis on 3/27/13.
 //  Copyright (c) 2013 IC. All rights reserved.
-//test edit
+//
+
+/**
+ @author Jason Debottis, Adeesha Ekanayake
+ @brief view controller for the root view
+ */
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>

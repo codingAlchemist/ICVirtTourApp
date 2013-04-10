@@ -6,6 +6,11 @@
 //  Copyright (c) 2013 IC. All rights reserved.
 //
 
+/**
+ @author Jason Debottis, Adeesha Ekanayake
+ @brief view controller for the settings view
+ */
+
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "VirtTourViewController.h"
