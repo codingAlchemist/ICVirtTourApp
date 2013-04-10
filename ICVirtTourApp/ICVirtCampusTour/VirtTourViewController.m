@@ -40,8 +40,12 @@
     [arView setPlacesOfInterest:NULL];
     [_theMapView removeAnnotations:_theMapView.annotations];
     
+    //reset nameToID
+    _nameToID = NULL;
+    
     NSArray* buildings = _buildings;
     CLLocation *mylocation = [_locationManager location];
+    _userLocation = _theMapView.userLocation;
     
     NSMutableArray* placesOfInterest = [NSMutableArray arrayWithCapacity:buildings.count];
     for (int i=0; i<buildings.count; i++)
@@ -71,8 +75,7 @@
         Annotation* mapMarker = [[Annotation alloc]initWithCoordinates:theMapLocation title:[building objectForKey:@"name"] subTitle:[building objectForKey:@"type"]];
         
         //add item to dictionary
-        //[_nameToID setObject:[building objectForKey:@"id"] forKey:[building objectForKey:@"name"]];
-        
+        [_nameToID setObject:[building objectForKey:@"id"] forKey:[building objectForKey:@"name"]];
         
         
         ARMarker* marker = [[ARMarker alloc] initWithImage:@"Pointer.PNG" andTitle:[building objectForKey:@"name"]showDistance:theDistance];
@@ -319,7 +322,7 @@
         pinView = [[MKPinAnnotationView alloc]initWithAnnotation:annotation reuseIdentifier:anID];
         
         //set the color and the right button
-        if (rowID_id == NULL)
+        if ([[annotation title]isEqualToString:@"Current Location"])
         {
             
             //if you want to keep the same default pin look you can change the color here
