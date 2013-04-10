@@ -19,5 +19,7 @@
 
 -(IBAction)changeMapType:(UISegmentedControl*)sender;
 
+-(IBAction)changeBuildingSetting:(id)sender;
+
 @end
 

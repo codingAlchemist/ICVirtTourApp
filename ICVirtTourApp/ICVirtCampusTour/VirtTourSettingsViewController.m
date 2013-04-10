@@ -13,6 +13,15 @@
 @end
 
 @implementation VirtTourSettingsViewController
+-(IBAction)changeBuildingSetting:(id)sender
+{
+    //find which type was clicked
+
+    
+    //change type in parent dictionary
+    
+    //reset the AR View and the map view in the parent
+}
 
 //connected programatically.
 -(IBAction)changeMapType:(UISegmentedControl*)sender
@@ -129,12 +138,13 @@
     {
         static NSString *CellIdentifier = @"layerCheck";
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        /*
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
-        
+        */
         //set the label of the cell
-        UILabel* layerLabel = (UILabel*) [cell viewWithTag:0];
+        UILabel* layerLabel = (UILabel*) [cell viewWithTag:1];
         [layerLabel setText:[_typesArray objectAtIndex:indexPath.row]];
     
     }
