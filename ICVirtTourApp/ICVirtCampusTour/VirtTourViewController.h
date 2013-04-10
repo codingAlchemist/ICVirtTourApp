@@ -34,6 +34,8 @@
 
 @interface VirtTourViewController : UIViewController<MKMapViewDelegate,CLLocationManagerDelegate>
 
+-(float)heading:(float)heading fromOrientation:(UIDeviceOrientation)orientation;
+
 /**
  *	@brief	called when DBWrapper throws a connection error
  */
@@ -83,7 +85,7 @@
 @property (nonatomic, strong) MKUserLocation *userLocation;
 @property (nonatomic, strong) CMMotionManager *manager;
 @property (nonatomic, strong) CLLocationManager *locationManager;
-
+@property (nonatomic, strong) UIImageView *compassImage;
 /**
  *	@brief	instance of DBWrapper class. Allows convenient connection to database
  */

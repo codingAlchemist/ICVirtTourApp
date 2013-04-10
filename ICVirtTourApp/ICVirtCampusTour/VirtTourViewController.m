@@ -30,6 +30,39 @@
 
 @implementation VirtTourViewController
 
+- (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
+    UIDevice *device = [UIDevice currentDevice];
+    float heading = -1.0 * M_PI *newHeading.magneticHeading /180.0f;
+    
+    float trueHeading = [self heading:newHeading.trueHeading fromOrientation:device.orientation];
+    _compassImage.transform = CGAffineTransformMakeRotation(heading);
+}
+
+-(float)heading:(float)heading fromOrientation:(UIDeviceOrientation)orientation{
+    float correctedHeading = heading;
+    
+    switch (orientation) {
+        case UIDeviceOrientationPortrait:
+            break;
+        case UIDeviceOrientationPortraitUpsideDown:
+            correctedHeading = heading + 180.0f;
+            break;
+        case UIDeviceOrientationLandscapeLeft:
+            correctedHeading = heading + 90.0f;
+            break;
+        case UIDeviceOrientationLandscapeRight:
+            correctedHeading = heading - 90.0f;
+        default:
+            break;
+    }
+    
+    while (heading > 360.0f) {
+        correctedHeading = heading - 360;
+    }
+    
+    return correctedHeading;
+}
+
 -(void)resetData
 {
     NSLog(@"Reseting data...");
@@ -212,6 +245,11 @@
     
     ARView *arView = (ARView *)self.view;
     
+    //Add the compass image to the view
+    _compassImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
+    _compassImage.image = [UIImage imageNamed:@"compass.png"];
+    [self.view addSubview:_compassImage];
+    
     //get building names and locations from database
     _myDBWrapper = [DBWrapper alloc];
     
@@ -233,6 +271,7 @@
     _locationManager.delegate = self;
     _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     _locationManager.distanceFilter = kCLDistanceFilterNone;
+    [_locationManager startUpdatingHeading];
     CLLocation *mylocation = [_locationManager location];
     
     /*
