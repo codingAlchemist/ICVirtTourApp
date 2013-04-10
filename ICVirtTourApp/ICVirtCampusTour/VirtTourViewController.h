@@ -19,6 +19,7 @@
 @class VirtTourWebViewController;
 
 @protocol detailViewControllerDelegate;
+@protocol settingsViewControllerDelegate;
 
 @interface VirtTourViewController : UIViewController<MKMapViewDelegate,CLLocationManagerDelegate>
 
@@ -27,6 +28,8 @@
 -(void)showCurrentlySelectedDetailedView;
 -(void)showSettingsView;
 -(float)MetersToMiles:(CGFloat)meters;
+
+-(void)setMapType:(MKMapType)mapType;
 
 @property (nonatomic, strong) MapOverlay *mapOverlay;
 @property (nonatomic, strong) MapOverlayView *mapOverlayView;
@@ -48,5 +51,11 @@
 @protocol detailViewControllerDelegate <NSObject>
 
 -(void)setCellDataWithName:(NSString *)name andImageName:(NSString *)imageName andText:(NSString *)text;
+
+@end
+
+@protocol settingsViewControllerDelegate <NSObject>
+
+-(void)setMapType:(MKMapType) mapType;
 
 @end

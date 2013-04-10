@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import "VirtTourViewController.h"
 
-@interface VirtTourSettingsViewController : UITableViewController
+@class VirtTourViewController;
+
+@interface VirtTourSettingsViewController : UITableViewController <settingsViewControllerDelegate>
+
+@property VirtTourViewController* delegate;
+
+-(IBAction)changeMapType:(UISegmentedControl*)sender;
 
 @end
+

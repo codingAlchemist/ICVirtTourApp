@@ -14,6 +14,25 @@
 
 @implementation VirtTourSettingsViewController
 
+//connected programatically.
+-(IBAction)changeMapType:(UISegmentedControl*)sender
+{
+    
+    switch ([sender selectedSegmentIndex]) {
+        case 0:
+            [_delegate setMapType:MKMapTypeStandard];
+            break;
+            
+        case 1:
+            [_delegate setMapType:MKMapTypeSatellite];
+            break;
+            
+        default:
+            [_delegate setMapType:MKMapTypeHybrid];
+            break;
+    }
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -77,6 +96,32 @@
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+            
+        }
+        if (indexPath.row == 0)
+        {
+        //add the IBAction
+        UISegmentedControl* setMapTypeControl = (UISegmentedControl*)[cell viewWithTag:1];
+        
+        //select the correct segment
+            NSInteger currentElement;
+            switch ([_delegate.theMapView mapType])
+            {
+                case MKMapTypeStandard:
+                    currentElement = 0;
+                    break;
+                    
+                case MKMapTypeSatellite:
+                    currentElement = 1;
+                    break;
+                    
+                default:
+                    currentElement = 2;
+                    break;
+            }
+            
+            //select it
+            [setMapTypeControl setSelectedSegmentIndex:currentElement];
         }
     }
     

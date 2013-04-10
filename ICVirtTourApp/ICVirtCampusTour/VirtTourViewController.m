@@ -30,12 +30,18 @@
 
 @implementation VirtTourViewController
 
+-(void)setMapType:(MKMapType)mapType
+{
+    [_theMapView setMapType:mapType];
+}
+
 -(void)showSettingsView
 {
     NSLog(@"Show settings view");
     
     UIStoryboard *settingsView = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     VirtTourSettingsViewController* newView = [settingsView instantiateViewControllerWithIdentifier:@"SettingsView"];
+    newView.delegate = self;
     
     [self.navigationController pushViewController:newView animated:YES];
     
@@ -203,13 +209,6 @@
     
     [arView setPlacesOfInterest:placesOfInterest];
     
-
-    /*
-     Sorry Jason, I took out the overlay :)
-     */
-    //add the campus map overlay
-    //_mapOverlay = [[MapOverlay alloc]init];
-    //[_theMapView addOverlay:_mapOverlay];
     _userLocation = _theMapView.userLocation;
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(_userLocation.location.coordinate, 1*METERS_PER_MILE, 1*METERS_PER_MILE);
