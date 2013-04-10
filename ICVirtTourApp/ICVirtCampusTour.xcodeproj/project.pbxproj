@@ -15,7 +15,9 @@
 		7740669B1710DF4700CD91BC /* VirtTourSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 774066991710DF4700CD91BC /* VirtTourSettingsViewController.m */; };
 		7786B2D3171277FE00EDDAA2 /* AppIconV2_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 7786B2D2171277FE00EDDAA2 /* AppIconV2_57x57.png */; };
 		7786B2D51712780000EDDAA2 /* AppIconV2_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 7786B2D41712780000EDDAA2 /* AppIconV2_114x114.png */; };
-		77B036C51715CA5200862EE2 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B036C41715CA5200862EE2 /* compass.png */; };
+		77B036C71715CEB100862EE2 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B036C61715CEB100862EE2 /* compass.png */; };
+		77B036CD1715CFC300862EE2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B036CC1715CFC300862EE2 /* Default-568h@2x.png */; };
+		77B036CF1715CFCC00862EE2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B036CE1715CFCC00862EE2 /* Default@2x.png */; };
 		9C9F98251703B3A10052E5AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9F98241703B3A10052E5AA /* UIKit.framework */; };
 		9C9F98271703B3A10052E5AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9F98261703B3A10052E5AA /* Foundation.framework */; };
 		9C9F98291703B3A10052E5AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9F98281703B3A10052E5AA /* CoreGraphics.framework */; };
@@ -62,7 +64,9 @@
 		774066991710DF4700CD91BC /* VirtTourSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirtTourSettingsViewController.m; sourceTree = "<group>"; };
 		7786B2D2171277FE00EDDAA2 /* AppIconV2_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconV2_57x57.png; sourceTree = "<group>"; };
 		7786B2D41712780000EDDAA2 /* AppIconV2_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconV2_114x114.png; sourceTree = "<group>"; };
-		77B036C41715CA5200862EE2 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
+		77B036C61715CEB100862EE2 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
+		77B036CC1715CFC300862EE2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		77B036CE1715CFCC00862EE2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		9C9F98211703B3A10052E5AA /* ICVirtCampusTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICVirtCampusTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C9F98241703B3A10052E5AA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C9F98261703B3A10052E5AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -151,7 +155,9 @@
 		9C9F98181703B3A10052E5AA = {
 			isa = PBXGroup;
 			children = (
-				77B036C41715CA5200862EE2 /* compass.png */,
+				77B036CE1715CFCC00862EE2 /* Default@2x.png */,
+				77B036CC1715CFC300862EE2 /* Default-568h@2x.png */,
+				77B036C61715CEB100862EE2 /* compass.png */,
 				7786B2D41712780000EDDAA2 /* AppIconV2_114x114.png */,
 				7786B2D2171277FE00EDDAA2 /* AppIconV2_57x57.png */,
 				774066961710AE0900CD91BC /* settingsImage.png */,
@@ -330,7 +336,9 @@
 				774066971710AE0900CD91BC /* settingsImage.png in Resources */,
 				7786B2D3171277FE00EDDAA2 /* AppIconV2_57x57.png in Resources */,
 				7786B2D51712780000EDDAA2 /* AppIconV2_114x114.png in Resources */,
-				77B036C51715CA5200862EE2 /* compass.png in Resources */,
+				77B036C71715CEB100862EE2 /* compass.png in Resources */,
+				77B036CD1715CFC300862EE2 /* Default-568h@2x.png in Resources */,
+				77B036CF1715CFCC00862EE2 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
