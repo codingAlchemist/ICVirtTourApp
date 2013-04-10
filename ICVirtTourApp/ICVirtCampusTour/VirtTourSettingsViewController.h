@@ -15,6 +15,7 @@
 @interface VirtTourSettingsViewController : UITableViewController <settingsViewControllerDelegate>
 
 @property VirtTourViewController* delegate;
+@property (nonatomic, strong) NSArray* typesArray;
 
 -(IBAction)changeMapType:(UISegmentedControl*)sender;
 

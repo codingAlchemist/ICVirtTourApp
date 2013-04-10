@@ -37,11 +37,14 @@
 
 -(void)showSettingsView
 {
-    NSLog(@"Show settings view");
+
+    //count the number of keys in the dict
+    NSArray* dictKeys = [_buildingTypesDisplay allKeys];
     
     UIStoryboard *settingsView = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     VirtTourSettingsViewController* newView = [settingsView instantiateViewControllerWithIdentifier:@"SettingsView"];
     newView.delegate = self;
+    newView.typesArray = dictKeys;
     
     [self.navigationController pushViewController:newView animated:YES];
     
@@ -122,6 +125,7 @@
     
     return miles;
 }
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -136,6 +140,8 @@
     
     self.navigationItem.rightBarButtonItem = settingsButton;
     
+    //init buildingtypes
+    _buildingTypesDisplay = [[NSMutableDictionary alloc]init];
     
     ARView *arView = (ARView *)self.view;
     
@@ -180,6 +186,12 @@
     {
         NSDictionary* building = [buildings objectAtIndex:i];
         
+        //hack to allow insertion of bool to dict
+        NSNumber *boolNumber = [NSNumber numberWithBool:YES];
+        
+        //add the type of building to the dict
+        [_buildingTypesDisplay setObject:boolNumber forKey:[building objectForKey:@"type"]];
+        
         double latitude = [[building objectForKey:@"x"] doubleValue];
         double longitude = [[building objectForKey:@"y"] doubleValue];
         
@@ -212,6 +224,7 @@
     _userLocation = _theMapView.userLocation;
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(_userLocation.location.coordinate, 1*METERS_PER_MILE, 1*METERS_PER_MILE);
+    
     [_theMapView setRegion:region animated:YES];
 
     // Listen for changes in device orientation

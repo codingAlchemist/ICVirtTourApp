@@ -43,6 +43,7 @@
 @property (nonatomic, strong) DBWrapper* myDBWrapper;
 @property (nonatomic, strong) NSArray* buildings;
 @property (nonatomic, strong) NSMutableDictionary* nameToID;
+@property (nonatomic, strong) NSMutableDictionary* buildingTypesDisplay;
 
 @property (nonatomic, strong) NSMutableArray *buildingNames;
 @property (nonatomic) BOOL ARViewDisplayed;

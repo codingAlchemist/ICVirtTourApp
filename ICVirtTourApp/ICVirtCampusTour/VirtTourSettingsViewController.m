@@ -83,7 +83,7 @@
     if (section == 0)
         return 1;
     else
-        return 0;
+        return [_typesArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -127,11 +127,15 @@
     
     else
     {
-        static NSString *CellIdentifier = @"Cell";
+        static NSString *CellIdentifier = @"layerCheck";
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (cell == nil) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         }
+        
+        //set the label of the cell
+        UILabel* layerLabel = (UILabel*) [cell viewWithTag:0];
+        [layerLabel setText:[_typesArray objectAtIndex:indexPath.row]];
     
     }
     // Configure the cell...
