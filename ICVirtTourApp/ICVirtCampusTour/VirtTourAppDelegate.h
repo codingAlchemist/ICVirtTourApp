@@ -17,8 +17,14 @@
 
 @interface VirtTourAppDelegate : UIResponder <UIApplicationDelegate>
 
+/**
+ *	@brief	reference to window
+ */
 @property (strong, nonatomic) UIWindow *window;
 
+/**
+ *	@brief	reference to the view controller
+ */
 @property (strong, nonatomic) VirtTourViewController *viewController;
 
 @end

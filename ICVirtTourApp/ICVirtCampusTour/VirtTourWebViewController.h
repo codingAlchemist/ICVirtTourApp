@@ -19,6 +19,7 @@
 #import <UIKit/UIKit.h>
 
 @interface VirtTourWebViewController : UIViewController
+
 @property (strong, nonatomic) IBOutlet UIWebView *campusWebView;
 @property (strong, nonatomic) IBOutlet UIToolbar *backBarButton;
 @property (strong,nonatomic) NSURL *theURL;
