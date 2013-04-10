@@ -30,6 +30,7 @@
 -(float)MetersToMiles:(CGFloat)meters;
 
 -(void)setMapType:(MKMapType)mapType;
+-(void)resetData;
 
 @property (nonatomic, strong) MapOverlay *mapOverlay;
 @property (nonatomic, strong) MapOverlayView *mapOverlayView;
@@ -58,5 +59,6 @@
 @protocol settingsViewControllerDelegate <NSObject>
 
 -(void)setMapType:(MKMapType) mapType;
+-(void)resetData;
 
 @end

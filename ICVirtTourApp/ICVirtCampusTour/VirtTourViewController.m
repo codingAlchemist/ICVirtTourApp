@@ -30,6 +30,11 @@
 
 @implementation VirtTourViewController
 
+-(void)resetData
+{
+    NSLog(@"Reseting data...");
+}
+
 -(void)setMapType:(MKMapType)mapType
 {
     [_theMapView setMapType:mapType];

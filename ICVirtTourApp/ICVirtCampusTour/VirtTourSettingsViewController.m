@@ -16,11 +16,18 @@
 -(IBAction)changeBuildingSetting:(id)sender
 {
     //find which type was clicked
-
+    CGPoint hitPoint = [sender convertPoint:CGPointZero toView:self.tableView];
+    NSIndexPath *hitIndex = [self.tableView indexPathForRowAtPoint:hitPoint];
+    NSString* changedType = [_typesArray objectAtIndex:hitIndex.row];
+    BOOL changedValue = [(UISwitch*)sender isOn];
+    NSNumber* changedValueWrapper = [NSNumber numberWithBool:changedValue];
     
     //change type in parent dictionary
+    [_delegate.buildingTypesDisplay setObject:changedValueWrapper forKey:changedType];
     
     //reset the AR View and the map view in the parent
+    [_delegate resetData];
+    
 }
 
 //connected programatically.
@@ -146,6 +153,14 @@
         //set the label of the cell
         UILabel* layerLabel = (UILabel*) [cell viewWithTag:1];
         [layerLabel setText:[_typesArray objectAtIndex:indexPath.row]];
+        
+        //set the state of the button
+        UISwitch* layerSwitch = (UISwitch*) [cell viewWithTag:2];
+        
+        //figure out whether the given type is on or off
+        BOOL state = [(NSNumber*)[_delegate.buildingTypesDisplay objectForKey:[_typesArray objectAtIndex:indexPath.row]] boolValue];
+        
+        [layerSwitch setOn:state];
     
     }
     // Configure the cell...
