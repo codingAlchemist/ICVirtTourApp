@@ -33,6 +33,64 @@
 -(void)resetData
 {
     NSLog(@"Reseting data...");
+    
+    ARView *arView = (ARView *)self.view;
+    
+    //reset the ARView and mapview
+    [arView setPlacesOfInterest:NULL];
+    [_theMapView removeAnnotations:_theMapView.annotations];
+    
+    NSArray* buildings = _buildings;
+    CLLocation *mylocation = [_locationManager location];
+    
+    NSMutableArray* placesOfInterest = [NSMutableArray arrayWithCapacity:buildings.count];
+    for (int i=0; i<buildings.count; i++)
+    {
+        NSDictionary* building = [buildings objectAtIndex:i];
+        
+        NSString* type = [building objectForKey:@"type"];
+        //check the dict, and draw the marker only if told to
+        BOOL drawThisBuilding = [[_buildingTypesDisplay objectForKey:type] boolValue];
+/*
+        //hack to allow insertion of bool to dict
+        NSNumber *boolNumber = [NSNumber numberWithBool:YES];
+        
+        //add the type of building to the dict
+        [_buildingTypesDisplay setObject:boolNumber forKey:[building objectForKey:@"type"]];
+ */
+        
+        double latitude = [[building objectForKey:@"x"] doubleValue];
+        double longitude = [[building objectForKey:@"y"] doubleValue];
+        
+        CLLocation *theBuildingLocation = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+        CLLocationCoordinate2D theMapLocation = CLLocationCoordinate2DMake(latitude, longitude);
+        
+        CGFloat distance = [mylocation distanceFromLocation:theBuildingLocation];
+        NSString *theDistance = [[NSString alloc]initWithFormat:@"%.2f",[self MetersToMiles:distance]];
+        
+        Annotation* mapMarker = [[Annotation alloc]initWithCoordinates:theMapLocation title:[building objectForKey:@"name"] subTitle:[building objectForKey:@"type"]];
+        
+        //add item to dictionary
+        //[_nameToID setObject:[building objectForKey:@"id"] forKey:[building objectForKey:@"name"]];
+        
+        
+        
+        ARMarker* marker = [[ARMarker alloc] initWithImage:@"Pointer.PNG" andTitle:[building objectForKey:@"name"]showDistance:theDistance];
+        
+        marker.parent = self;
+        marker.rowId = (i+1);
+        
+        PlaceOfInterest *poi = [PlaceOfInterest placeOfInterestWithView:marker at:[[CLLocation alloc] initWithLatitude:latitude longitude:longitude]];
+        
+        if (drawThisBuilding)
+        {
+            [placesOfInterest insertObject:poi atIndex:[placesOfInterest count]];
+            [_theMapView addAnnotation:mapMarker];
+        }
+    }
+    
+    [arView setPlacesOfInterest:placesOfInterest];
+    
 }
 
 -(void)setMapType:(MKMapType)mapType
