@@ -1,0 +1,4 @@
+/**
+\mainpage Looking Glass
+This project is an Augmented Reality map system. It is currently implemented with a PHP/MYSQL back-end database with markers focused on Ithaca College. The project is intended for the Ithaca College App competition.
+*/

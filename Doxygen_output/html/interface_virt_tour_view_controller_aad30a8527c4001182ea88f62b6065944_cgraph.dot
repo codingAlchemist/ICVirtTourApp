@@ -1,0 +1,11 @@
+digraph "showDetailedViewWithRowId:"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="showDetailedViewWithRowId:",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="httpError",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_virt_tour_view_controller.html#a7ba3f39280d7772b515d51f9d29f2f69",tooltip="called when DBWrapper throws a connection error"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="-[ARDetailedViewController\l setCellDataWithName:andImageName\l:andText:]",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_a_r_detailed_view_controller.html#a7db6bd35718ac78cf9d0ace37a65ff05",tooltip="lets parent set the data in this view"];
+}

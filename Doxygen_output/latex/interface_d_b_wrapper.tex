@@ -1,0 +1,168 @@
+\hypertarget{interface_d_b_wrapper}{\section{D\-B\-Wrapper Class Reference}
+\label{interface_d_b_wrapper}\index{D\-B\-Wrapper@{D\-B\-Wrapper}}
+}
+Inheritance diagram for D\-B\-Wrapper\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_d_b_wrapper}
+\end{center}
+\end{figure}
+\subsection*{Instance Methods}
+\begin{DoxyCompactItemize}
+\item 
+(N\-S\-Array $\ast$) -\/ \hyperlink{interface_d_b_wrapper_a79ba74edfcd452ac40313d0b8a3a7079}{get\-All\-Buildings\-With\-Callback\-:}
+\begin{DoxyCompactList}\small\item\em returns an array with all the buildings in the database \end{DoxyCompactList}\item 
+(N\-S\-Dictionary $\ast$) -\/ \hyperlink{interface_d_b_wrapper_a134d1555bd56b3b371d743b86db98b65}{get\-Row\-With\-Row\-Id\-:and\-Callback\-:}
+\begin{DoxyCompactList}\small\item\em returns a dictionary with a row corresponding to the id \end{DoxyCompactList}\item 
+(N\-S\-Dictionary $\ast$) -\/ \hyperlink{interface_d_b_wrapper_ade09238319808eb9cc3725f3bf54491b}{get\-Text\-With\-Row\-Id\-:and\-Callback\-:}
+\begin{DoxyCompactList}\small\item\em gets the text description for a given entry \end{DoxyCompactList}\item 
+(N\-S\-String $\ast$) -\/ \hyperlink{interface_d_b_wrapper_a0a82e82437868cd01a5c8340944733c2}{get\-H\-T\-T\-P\-Data\-With\-Url\-:}
+\begin{DoxyCompactList}\small\item\em conducts an http request and returns the response \end{DoxyCompactList}\item 
+(N\-S\-String $\ast$) -\/ \hyperlink{interface_d_b_wrapper_a23a0e365500a280f65ea1b703f101f3e}{get\-H\-T\-T\-P\-Data\-With\-Url\-:and\-Callback\-:}
+\begin{DoxyCompactList}\small\item\em conducts an http request and returns the response \end{DoxyCompactList}\item 
+(N\-S\-Array $\ast$) -\/ \hyperlink{interface_d_b_wrapper_a022262bbc0a19c048ce21b2f89730180}{parse\-J\-S\-O\-N\-To\-Array\-:}
+\begin{DoxyCompactList}\small\item\em parses the string and returns a J\-S\-O\-N array \end{DoxyCompactList}\item 
+(N\-S\-Dictionary $\ast$) -\/ \hyperlink{interface_d_b_wrapper_ae0a365a9a129753aa965767a75fd12ae}{parse\-J\-S\-O\-N\-To\-Dict\-:}
+\begin{DoxyCompactList}\small\item\em parses the string and returns a J\-S\-O\-N dictionary \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Method Documentation}
+\hypertarget{interface_d_b_wrapper_a79ba74edfcd452ac40313d0b8a3a7079}{\index{D\-B\-Wrapper@{D\-B\-Wrapper}!get\-All\-Buildings\-With\-Callback\-:@{get\-All\-Buildings\-With\-Callback\-:}}
+\index{get\-All\-Buildings\-With\-Callback\-:@{get\-All\-Buildings\-With\-Callback\-:}!DBWrapper@{D\-B\-Wrapper}}
+\subsubsection[{get\-All\-Buildings\-With\-Callback\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array $\ast$) get\-All\-Buildings\-With\-Callback\-: 
+\begin{DoxyParamCaption}
+\item[{(void)}]{error\-Callback}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_wrapper_a79ba74edfcd452ac40313d0b8a3a7079}
+
+
+returns an array with all the buildings in the database 
+
+\begin{DoxyReturn}{Returns}
+array with the buildings. Element is a dictionary 
+\end{DoxyReturn}
+\hypertarget{interface_d_b_wrapper_a0a82e82437868cd01a5c8340944733c2}{\index{D\-B\-Wrapper@{D\-B\-Wrapper}!get\-H\-T\-T\-P\-Data\-With\-Url\-:@{get\-H\-T\-T\-P\-Data\-With\-Url\-:}}
+\index{get\-H\-T\-T\-P\-Data\-With\-Url\-:@{get\-H\-T\-T\-P\-Data\-With\-Url\-:}!DBWrapper@{D\-B\-Wrapper}}
+\subsubsection[{get\-H\-T\-T\-P\-Data\-With\-Url\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String$\ast$) get\-H\-T\-T\-P\-Data\-With\-Url\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{url}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_wrapper_a0a82e82437868cd01a5c8340944733c2}
+
+
+conducts an http request and returns the response 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & url destination of the http request\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the http response 
+\end{DoxyReturn}
+\hypertarget{interface_d_b_wrapper_a23a0e365500a280f65ea1b703f101f3e}{\index{D\-B\-Wrapper@{D\-B\-Wrapper}!get\-H\-T\-T\-P\-Data\-With\-Url\-:and\-Callback\-:@{get\-H\-T\-T\-P\-Data\-With\-Url\-:and\-Callback\-:}}
+\index{get\-H\-T\-T\-P\-Data\-With\-Url\-:and\-Callback\-:@{get\-H\-T\-T\-P\-Data\-With\-Url\-:and\-Callback\-:}!DBWrapper@{D\-B\-Wrapper}}
+\subsubsection[{get\-H\-T\-T\-P\-Data\-With\-Url\-:and\-Callback\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-String $\ast$) {\bf get\-H\-T\-T\-P\-Data\-With\-Url\-:} 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String$\ast$)}]{url}
+\item[{andCallback:(void)}]{error\-Callback}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_wrapper_a23a0e365500a280f65ea1b703f101f3e}
+
+
+conducts an http request and returns the response 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & url destination of the http request \\
+\hline
+{\em and\-Callback} & callback executed on http request error\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the http response 
+\end{DoxyReturn}
+\hypertarget{interface_d_b_wrapper_a134d1555bd56b3b371d743b86db98b65}{\index{D\-B\-Wrapper@{D\-B\-Wrapper}!get\-Row\-With\-Row\-Id\-:and\-Callback\-:@{get\-Row\-With\-Row\-Id\-:and\-Callback\-:}}
+\index{get\-Row\-With\-Row\-Id\-:and\-Callback\-:@{get\-Row\-With\-Row\-Id\-:and\-Callback\-:}!DBWrapper@{D\-B\-Wrapper}}
+\subsubsection[{get\-Row\-With\-Row\-Id\-:and\-Callback\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Dictionary $\ast$) get\-Row\-With\-Row\-Id\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{row\-Id}
+\item[{andCallback:(void)}]{error\-Callback}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_wrapper_a134d1555bd56b3b371d743b86db98b65}
+
+
+returns a dictionary with a row corresponding to the id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row\-Id} & the id of the row\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a dictionary with the data in a row 
+\end{DoxyReturn}
+\hypertarget{interface_d_b_wrapper_ade09238319808eb9cc3725f3bf54491b}{\index{D\-B\-Wrapper@{D\-B\-Wrapper}!get\-Text\-With\-Row\-Id\-:and\-Callback\-:@{get\-Text\-With\-Row\-Id\-:and\-Callback\-:}}
+\index{get\-Text\-With\-Row\-Id\-:and\-Callback\-:@{get\-Text\-With\-Row\-Id\-:and\-Callback\-:}!DBWrapper@{D\-B\-Wrapper}}
+\subsubsection[{get\-Text\-With\-Row\-Id\-:and\-Callback\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Dictionary $\ast$) get\-Text\-With\-Row\-Id\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-Integer)}]{row\-Id}
+\item[{andCallback:(void)}]{error\-Callback}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_wrapper_ade09238319808eb9cc3725f3bf54491b}
+
+
+gets the text description for a given entry 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row\-Id} & the row id for the entry\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the text description 
+\end{DoxyReturn}
+\hypertarget{interface_d_b_wrapper_a022262bbc0a19c048ce21b2f89730180}{\index{D\-B\-Wrapper@{D\-B\-Wrapper}!parse\-J\-S\-O\-N\-To\-Array\-:@{parse\-J\-S\-O\-N\-To\-Array\-:}}
+\index{parse\-J\-S\-O\-N\-To\-Array\-:@{parse\-J\-S\-O\-N\-To\-Array\-:}!DBWrapper@{D\-B\-Wrapper}}
+\subsubsection[{parse\-J\-S\-O\-N\-To\-Array\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Array $\ast$) parse\-J\-S\-O\-N\-To\-Array\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String$\ast$)}]{data\-String}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_wrapper_a022262bbc0a19c048ce21b2f89730180}
+
+
+parses the string and returns a J\-S\-O\-N array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\-String} & string to parse into J\-S\-O\-N\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an array with the J\-S\-O\-N data 
+\end{DoxyReturn}
+\hypertarget{interface_d_b_wrapper_ae0a365a9a129753aa965767a75fd12ae}{\index{D\-B\-Wrapper@{D\-B\-Wrapper}!parse\-J\-S\-O\-N\-To\-Dict\-:@{parse\-J\-S\-O\-N\-To\-Dict\-:}}
+\index{parse\-J\-S\-O\-N\-To\-Dict\-:@{parse\-J\-S\-O\-N\-To\-Dict\-:}!DBWrapper@{D\-B\-Wrapper}}
+\subsubsection[{parse\-J\-S\-O\-N\-To\-Dict\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (N\-S\-Dictionary $\ast$) parse\-J\-S\-O\-N\-To\-Dict\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{data\-String}
+\end{DoxyParamCaption}
+}}\label{interface_d_b_wrapper_ae0a365a9a129753aa965767a75fd12ae}
+
+
+parses the string and returns a J\-S\-O\-N dictionary 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\-String} & the string to parse into J\-S\-O\-N\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a dictionary with the J\-S\-O\-N data 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/adeeshaek/\-Documents/\-Programming/\-Engineering/\-App\-\_\-contest/\-I\-C\-Virt\-Tour\-App/\-I\-C\-Virt\-Tour\-App/\-I\-C\-Virt\-Campus\-Tour/D\-B\-Wrapper.\-h\item 
+/\-Users/adeeshaek/\-Documents/\-Programming/\-Engineering/\-App\-\_\-contest/\-I\-C\-Virt\-Tour\-App/\-I\-C\-Virt\-Tour\-App/\-I\-C\-Virt\-Campus\-Tour/D\-B\-Wrapper.\-m\end{DoxyCompactItemize}
