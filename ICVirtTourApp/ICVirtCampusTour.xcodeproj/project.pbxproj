@@ -18,6 +18,11 @@
 		77B036C71715CEB100862EE2 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B036C61715CEB100862EE2 /* compass.png */; };
 		77B036CD1715CFC300862EE2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B036CC1715CFC300862EE2 /* Default-568h@2x.png */; };
 		77B036CF1715CFCC00862EE2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B036CE1715CFCC00862EE2 /* Default@2x.png */; };
+		77DBA52F17172F3B00B18402 /* Academic_Marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DBA52A17172F3B00B18402 /* Academic_Marker.png */; };
+		77DBA53017172F3B00B18402 /* BusStop_Marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DBA52B17172F3B00B18402 /* BusStop_Marker.png */; };
+		77DBA53117172F3B00B18402 /* DiningHall_Marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DBA52C17172F3B00B18402 /* DiningHall_Marker.png */; };
+		77DBA53217172F3B00B18402 /* ParkingLot_Marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DBA52D17172F3B00B18402 /* ParkingLot_Marker.png */; };
+		77DBA53317172F3B00B18402 /* Residential_Marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 77DBA52E17172F3B00B18402 /* Residential_Marker.png */; };
 		9C9F98251703B3A10052E5AA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9F98241703B3A10052E5AA /* UIKit.framework */; };
 		9C9F98271703B3A10052E5AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9F98261703B3A10052E5AA /* Foundation.framework */; };
 		9C9F98291703B3A10052E5AA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9F98281703B3A10052E5AA /* CoreGraphics.framework */; };
@@ -67,6 +72,11 @@
 		77B036C61715CEB100862EE2 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
 		77B036CC1715CFC300862EE2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		77B036CE1715CFCC00862EE2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		77DBA52A17172F3B00B18402 /* Academic_Marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Academic_Marker.png; sourceTree = "<group>"; };
+		77DBA52B17172F3B00B18402 /* BusStop_Marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BusStop_Marker.png; sourceTree = "<group>"; };
+		77DBA52C17172F3B00B18402 /* DiningHall_Marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DiningHall_Marker.png; sourceTree = "<group>"; };
+		77DBA52D17172F3B00B18402 /* ParkingLot_Marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ParkingLot_Marker.png; sourceTree = "<group>"; };
+		77DBA52E17172F3B00B18402 /* Residential_Marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Residential_Marker.png; sourceTree = "<group>"; };
 		9C9F98211703B3A10052E5AA /* ICVirtCampusTour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICVirtCampusTour.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C9F98241703B3A10052E5AA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9C9F98261703B3A10052E5AA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -249,6 +259,11 @@
 		9C9F98621703BD6B0052E5AA /* images */ = {
 			isa = PBXGroup;
 			children = (
+				77DBA52A17172F3B00B18402 /* Academic_Marker.png */,
+				77DBA52B17172F3B00B18402 /* BusStop_Marker.png */,
+				77DBA52C17172F3B00B18402 /* DiningHall_Marker.png */,
+				77DBA52D17172F3B00B18402 /* ParkingLot_Marker.png */,
+				77DBA52E17172F3B00B18402 /* Residential_Marker.png */,
 				9C9F98751703C2C60052E5AA /* collegeMap.png */,
 				9C9F98631703BD850052E5AA /* Pointer.PNG */,
 				9C9F98641703BD850052E5AA /* PointerPressed.png */,
@@ -339,6 +354,11 @@
 				77B036C71715CEB100862EE2 /* compass.png in Resources */,
 				77B036CD1715CFC300862EE2 /* Default-568h@2x.png in Resources */,
 				77B036CF1715CFCC00862EE2 /* Default@2x.png in Resources */,
+				77DBA52F17172F3B00B18402 /* Academic_Marker.png in Resources */,
+				77DBA53017172F3B00B18402 /* BusStop_Marker.png in Resources */,
+				77DBA53117172F3B00B18402 /* DiningHall_Marker.png in Resources */,
+				77DBA53217172F3B00B18402 /* ParkingLot_Marker.png in Resources */,
+				77DBA53317172F3B00B18402 /* Residential_Marker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

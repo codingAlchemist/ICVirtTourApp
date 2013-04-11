@@ -30,6 +30,77 @@
 
 @implementation VirtTourViewController
 
+-(NSMutableArray*)setupPlacesOfInterestWithBuildings:(NSArray*)buildings andLocation:(CLLocation*)mylocation andMapView:(MKMapView*)theMapView
+{
+    NSMutableArray* placesOfInterest = [NSMutableArray arrayWithCapacity:buildings.count];
+    for (int i=0; i<buildings.count; i++)
+    {
+        NSDictionary* building = [buildings objectAtIndex:i];
+        
+        //hack to allow insertion of bool to dict
+        NSNumber *boolNumber = [NSNumber numberWithBool:YES];
+        
+        //get the type
+        NSString* buildingType = [building objectForKey:@"type"];
+        
+        //add the type of building to the dict
+        [_buildingTypesDisplay setObject:boolNumber forKey:buildingType];
+        
+        double latitude = [[building objectForKey:@"x"] doubleValue];
+        double longitude = [[building objectForKey:@"y"] doubleValue];
+        
+        CLLocation *theBuildingLocation = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
+        CLLocationCoordinate2D theMapLocation = CLLocationCoordinate2DMake(latitude, longitude);
+        
+        CGFloat distance = [mylocation distanceFromLocation:theBuildingLocation];
+        NSString *theDistance = [[NSString alloc]initWithFormat:@"%.2f",[self MetersToMiles:distance]];
+        
+        Annotation* mapMarker = [[Annotation alloc]initWithCoordinates:theMapLocation title:[building objectForKey:@"name"] subTitle:buildingType];
+        
+        //add item to dictionary
+        [_nameToID setObject:[building objectForKey:@"id"] forKey:[building objectForKey:@"name"]];
+        
+        [theMapView addAnnotation:mapMarker];
+        
+        NSString* imageName;
+        
+        //check the type of marker then allocate the marker image
+        if ([buildingType isEqualToString: @"Academic"])
+        {
+            imageName = @"Academic_Marker.png";
+        }
+        else if ([buildingType isEqualToString:@"Residential"])
+        {
+            imageName = @"Residential_Marker.png";
+        }
+        else if ([buildingType isEqualToString:@"Parking"])
+        {
+            imageName = @"ParkingLot_Marker.png";
+        }
+        else if ([buildingType isEqualToString:@"Dining"])
+        {
+            imageName = @"DiningHall_Marker.png";
+        }
+        else if ([buildingType isEqualToString:@"Bus"])
+        {
+            imageName = @"BusStop_Marker.png";
+        }
+        else{
+            imageName = @"Pointer.png";
+        }
+        
+        ARMarker* marker = [[ARMarker alloc] initWithImage:imageName andTitle:[building objectForKey:@"name"]showDistance:theDistance];
+        
+        marker.parent = self;
+        marker.rowId = (i+1);
+        
+        PlaceOfInterest *poi = [PlaceOfInterest placeOfInterestWithView:marker at:[[CLLocation alloc] initWithLatitude:latitude longitude:longitude]];
+		[placesOfInterest insertObject:poi atIndex:i];
+    }
+    
+    return placesOfInterest;
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading{
     UIDevice *device = [UIDevice currentDevice];
     float heading = -1.0 * M_PI *newHeading.magneticHeading /180.0f;
@@ -85,16 +156,9 @@
     {
         NSDictionary* building = [buildings objectAtIndex:i];
         
-        NSString* type = [building objectForKey:@"type"];
+        NSString* buildingType = [building objectForKey:@"type"];
         //check the dict, and draw the marker only if told to
-        BOOL drawThisBuilding = [[_buildingTypesDisplay objectForKey:type] boolValue];
-/*
-        //hack to allow insertion of bool to dict
-        NSNumber *boolNumber = [NSNumber numberWithBool:YES];
-        
-        //add the type of building to the dict
-        [_buildingTypesDisplay setObject:boolNumber forKey:[building objectForKey:@"type"]];
- */
+        BOOL drawThisBuilding = [[_buildingTypesDisplay objectForKey:buildingType] boolValue];
         
         double latitude = [[building objectForKey:@"x"] doubleValue];
         double longitude = [[building objectForKey:@"y"] doubleValue];
@@ -110,8 +174,34 @@
         //add item to dictionary
         [_nameToID setObject:[building objectForKey:@"id"] forKey:[building objectForKey:@"name"]];
         
+        NSString* imageName;
         
-        ARMarker* marker = [[ARMarker alloc] initWithImage:@"Pointer.PNG" andTitle:[building objectForKey:@"name"]showDistance:theDistance];
+        //check the type of marker then allocate the marker image
+        if ([buildingType isEqualToString: @"Academic"])
+        {
+            imageName = @"Academic_Marker.png";
+        }
+        else if ([buildingType isEqualToString:@"Residential"])
+        {
+            imageName = @"Residential_Marker.png";
+        }
+        else if ([buildingType isEqualToString:@"Parking"])
+        {
+            imageName = @"ParkingLot_Marker.png";
+        }
+        else if ([buildingType isEqualToString:@"Dining"])
+        {
+            imageName = @"DiningHall_Marker.png";
+        }
+        else if ([buildingType isEqualToString:@"Bus"])
+        {
+            imageName = @"BusStop_Marker.png";
+        }
+        else{
+            imageName = @"Pointer.png";
+        }
+        
+        ARMarker* marker = [[ARMarker alloc] initWithImage:imageName andTitle:[building objectForKey:@"name"]showDistance:theDistance];
         
         marker.parent = self;
         marker.rowId = (i+1);
@@ -287,43 +377,7 @@
     
     //add map annotations for all buildings
     
-    NSMutableArray* placesOfInterest = [NSMutableArray arrayWithCapacity:buildings.count];
-    for (int i=0; i<buildings.count; i++)
-    {
-        NSDictionary* building = [buildings objectAtIndex:i];
-        
-        //hack to allow insertion of bool to dict
-        NSNumber *boolNumber = [NSNumber numberWithBool:YES];
-        
-        //add the type of building to the dict
-        [_buildingTypesDisplay setObject:boolNumber forKey:[building objectForKey:@"type"]];
-        
-        double latitude = [[building objectForKey:@"x"] doubleValue];
-        double longitude = [[building objectForKey:@"y"] doubleValue];
-        
-        CLLocation *theBuildingLocation = [[CLLocation alloc]initWithLatitude:latitude longitude:longitude];
-        CLLocationCoordinate2D theMapLocation = CLLocationCoordinate2DMake(latitude, longitude);
-        
-        CGFloat distance = [mylocation distanceFromLocation:theBuildingLocation];
-        NSString *theDistance = [[NSString alloc]initWithFormat:@"%.2f",[self MetersToMiles:distance]];
-        
-        Annotation* mapMarker = [[Annotation alloc]initWithCoordinates:theMapLocation title:[building objectForKey:@"name"] subTitle:[building objectForKey:@"type"]];
-        
-        //add item to dictionary
-        [_nameToID setObject:[building objectForKey:@"id"] forKey:[building objectForKey:@"name"]];
-        
-        [_theMapView addAnnotation:mapMarker];
-        
-        ARMarker* marker = [[ARMarker alloc] initWithImage:@"Pointer.PNG" andTitle:[building objectForKey:@"name"]showDistance:theDistance];
-        
-        marker.parent = self;
-        marker.rowId = (i+1);
-
-        PlaceOfInterest *poi = [PlaceOfInterest placeOfInterestWithView:marker at:[[CLLocation alloc] initWithLatitude:latitude longitude:longitude]];
-		[placesOfInterest insertObject:poi atIndex:i];
-        
-        
-    }
+    NSMutableArray* placesOfInterest = [self setupPlacesOfInterestWithBuildings:buildings andLocation:mylocation andMapView:_theMapView];
     
     [arView setPlacesOfInterest:placesOfInterest];
     
