@@ -53,6 +53,7 @@
 		9C9F98731703BF830052E5AA /* MapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9F986D1703BF830052E5AA /* MapOverlay.m */; };
 		9C9F98741703BF830052E5AA /* MapOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9F986E1703BF830052E5AA /* MapOverlayView.m */; };
 		9C9F98761703C2C60052E5AA /* collegeMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F98751703C2C60052E5AA /* collegeMap.png */; };
+		9CAAA754171791C500AA7D8D /* ICAppBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAAA753171791C500AA7D8D /* ICAppBorder.png */; };
 		9CAB9E7B1710E8FE00F1AF60 /* VirtTourWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB9E7A1710E8FE00F1AF60 /* VirtTourWebViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -118,6 +119,7 @@
 		9C9F98701703BF830052E5AA /* MapOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOverlay.h; sourceTree = "<group>"; };
 		9C9F98711703BF830052E5AA /* MapOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOverlayView.h; sourceTree = "<group>"; };
 		9C9F98751703C2C60052E5AA /* collegeMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collegeMap.png; sourceTree = "<group>"; };
+		9CAAA753171791C500AA7D8D /* ICAppBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICAppBorder.png; sourceTree = "<group>"; };
 		9CAB9E791710E8FE00F1AF60 /* VirtTourWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirtTourWebViewController.h; sourceTree = "<group>"; };
 		9CAB9E7A1710E8FE00F1AF60 /* VirtTourWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirtTourWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -259,6 +261,7 @@
 		9C9F98621703BD6B0052E5AA /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9CAAA753171791C500AA7D8D /* ICAppBorder.png */,
 				77DBA52A17172F3B00B18402 /* Academic_Marker.png */,
 				77DBA52B17172F3B00B18402 /* BusStop_Marker.png */,
 				77DBA52C17172F3B00B18402 /* DiningHall_Marker.png */,
@@ -359,6 +362,7 @@
 				77DBA53117172F3B00B18402 /* DiningHall_Marker.png in Resources */,
 				77DBA53217172F3B00B18402 /* ParkingLot_Marker.png in Resources */,
 				77DBA53317172F3B00B18402 /* Residential_Marker.png in Resources */,
+				9CAAA754171791C500AA7D8D /* ICAppBorder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

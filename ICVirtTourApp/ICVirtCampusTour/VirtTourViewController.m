@@ -216,7 +216,7 @@
     }
     
     [arView setPlacesOfInterest:placesOfInterest];
-    
+
 }
 
 -(void)setMapType:(MKMapType)mapType
@@ -336,9 +336,9 @@
     ARView *arView = (ARView *)self.view;
     
     //Add the compass image to the view
-    _compassImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
+    _compassImage = [[UIImageView alloc]initWithFrame:CGRectMake(20, 50, _compassImage.frame.origin.x + 90, _compassImage.frame.origin.y+90)];
     _compassImage.image = [UIImage imageNamed:@"compass.png"];
-    [self.view addSubview:_compassImage];
+    [arView addSubview:_compassImage];
     
     //get building names and locations from database
     _myDBWrapper = [DBWrapper alloc];
@@ -380,7 +380,7 @@
     NSMutableArray* placesOfInterest = [self setupPlacesOfInterestWithBuildings:buildings andLocation:mylocation andMapView:_theMapView];
     
     [arView setPlacesOfInterest:placesOfInterest];
-    
+
     _userLocation = _theMapView.userLocation;
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(_userLocation.location.coordinate, 1*METERS_PER_MILE, 1*METERS_PER_MILE);
