@@ -265,12 +265,13 @@ void ecefToEnu(double lat, double lon, double x, double y, double z, double xr, 
 		const DistanceAndIndex *distanceAndIndex = (const DistanceAndIndex *)d.bytes;
 		PlaceOfInterest *poi = (PlaceOfInterest *)[placesOfInterest objectAtIndex:distanceAndIndex->index];		
 		[self addSubview:poi.view];
-        
+        /*
+         Commented out border view
         UIImageView *borderView = [[UIImageView alloc]initWithFrame:self.bounds];
         borderView.backgroundColor = [UIColor clearColor];
         borderView.image = [UIImage imageNamed:@"ICAppBorder.png"];
         [self addSubview:borderView];
-
+         */
 	}	
 }
 
