@@ -13,6 +13,7 @@
 		772BEF8A170F9E5E00D3D600 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772BEF88170F9E5D00D3D600 /* Storyboard.storyboard */; };
 		774066971710AE0900CD91BC /* settingsImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 774066961710AE0900CD91BC /* settingsImage.png */; };
 		7740669B1710DF4700CD91BC /* VirtTourSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 774066991710DF4700CD91BC /* VirtTourSettingsViewController.m */; };
+		7741B54C17209D8C009EDC12 /* Banner.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 7741B54B17209D8C009EDC12 /* Banner.PNG */; };
 		7786B2D3171277FE00EDDAA2 /* AppIconV2_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 7786B2D2171277FE00EDDAA2 /* AppIconV2_57x57.png */; };
 		7786B2D51712780000EDDAA2 /* AppIconV2_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 7786B2D41712780000EDDAA2 /* AppIconV2_114x114.png */; };
 		77B036C71715CEB100862EE2 /* compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 77B036C61715CEB100862EE2 /* compass.png */; };
@@ -67,6 +68,7 @@
 		774066961710AE0900CD91BC /* settingsImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsImage.png; sourceTree = "<group>"; };
 		774066981710DF4700CD91BC /* VirtTourSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirtTourSettingsViewController.h; sourceTree = "<group>"; };
 		774066991710DF4700CD91BC /* VirtTourSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirtTourSettingsViewController.m; sourceTree = "<group>"; };
+		7741B54B17209D8C009EDC12 /* Banner.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Banner.PNG; sourceTree = "<group>"; };
 		7786B2D2171277FE00EDDAA2 /* AppIconV2_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconV2_57x57.png; sourceTree = "<group>"; };
 		7786B2D41712780000EDDAA2 /* AppIconV2_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIconV2_114x114.png; sourceTree = "<group>"; };
 		77B036C61715CEB100862EE2 /* compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compass.png; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		9C9F98181703B3A10052E5AA = {
 			isa = PBXGroup;
 			children = (
+				7741B54B17209D8C009EDC12 /* Banner.PNG */,
 				77B036CE1715CFCC00862EE2 /* Default@2x.png */,
 				77B036CC1715CFC300862EE2 /* Default-568h@2x.png */,
 				77B036C61715CEB100862EE2 /* compass.png */,
@@ -358,6 +361,7 @@
 				77DBA53217172F3B00B18402 /* ParkingLot_Marker.png in Resources */,
 				77DBA53317172F3B00B18402 /* Residential_Marker.png in Resources */,
 				9CAAA754171791C500AA7D8D /* ICAppBorder.png in Resources */,
+				7741B54C17209D8C009EDC12 /* Banner.PNG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
