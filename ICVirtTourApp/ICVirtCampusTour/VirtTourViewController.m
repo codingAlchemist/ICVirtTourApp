@@ -6,8 +6,9 @@
 //  Copyright (c) 2013 IC. All rights reserved.
 //
 
-
 #import "VirtTourViewController.h"
+
+//header for settings view
 #import "VirtTourSettingsViewController.h"
 
 //Augmented Reality headers
@@ -468,12 +469,6 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
-    
-    //Annotation *theAnnotation = [[Annotation alloc]initWithCoordinates:_userLocation.coordinate title:@"ME" subTitle:@"I am here"];
-    
-    //To add more than one location pin
-    //NSArray *myPins = [[NSArray alloc]initWithObjects:theAnnotation, nil];
-    //[_theMapView addAnnotation:theAnnotation];
     _theMapView.centerCoordinate = CLLocationCoordinate2DMake(42.422694, -76.495196);
     [_theMapView setZoomEnabled:YES];
     
