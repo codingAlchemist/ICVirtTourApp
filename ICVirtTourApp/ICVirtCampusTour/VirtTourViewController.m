@@ -23,6 +23,7 @@
 #import "MapOverlayView.h"
 
 #define METERS_PER_MILE 1609.344
+#define APP_TITLE @"Looking Glass"
 
 @interface VirtTourViewController ()
 
@@ -321,7 +322,7 @@
     [super viewDidLoad];
     
     //set title
-    self.title = @"IC Looking Glass";
+    self.title = APP_TITLE;
     
     UIBarButtonItem * settingsButton =
     [[UIBarButtonItem alloc] initWithTitle:@"Settings" style:UIBarButtonItemStylePlain target:self action:@selector(showSettingsView)];
