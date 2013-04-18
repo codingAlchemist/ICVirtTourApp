@@ -8,7 +8,6 @@
 
 
 #import "VirtTourViewController.h"
-#import "VirtTourWebViewController.h"
 #import "VirtTourSettingsViewController.h"
 
 //Augmented Reality headers
@@ -466,15 +465,6 @@
     
     return pinView;
     
-}
-
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
-    
-    if ([view.annotation.title isEqualToString:@"Williams"]) {
-        _webView = [[VirtTourWebViewController alloc]initWithNibName:@"VirtTourWebViewController" bundle:nil andURL:@"http://www.ithaca.edu"];
-        [self presentViewController:_webView animated:YES completion:^{}];
-        //[_navController pushViewController:_webView animated:YES];
-    }
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{

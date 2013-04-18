@@ -54,7 +54,6 @@
 		9C9F98741703BF830052E5AA /* MapOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9F986E1703BF830052E5AA /* MapOverlayView.m */; };
 		9C9F98761703C2C60052E5AA /* collegeMap.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F98751703C2C60052E5AA /* collegeMap.png */; };
 		9CAAA754171791C500AA7D8D /* ICAppBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CAAA753171791C500AA7D8D /* ICAppBorder.png */; };
-		9CAB9E7B1710E8FE00F1AF60 /* VirtTourWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CAB9E7A1710E8FE00F1AF60 /* VirtTourWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,8 +119,6 @@
 		9C9F98711703BF830052E5AA /* MapOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapOverlayView.h; sourceTree = "<group>"; };
 		9C9F98751703C2C60052E5AA /* collegeMap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = collegeMap.png; sourceTree = "<group>"; };
 		9CAAA753171791C500AA7D8D /* ICAppBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICAppBorder.png; sourceTree = "<group>"; };
-		9CAB9E791710E8FE00F1AF60 /* VirtTourWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VirtTourWebViewController.h; sourceTree = "<group>"; };
-		9CAB9E7A1710E8FE00F1AF60 /* VirtTourWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VirtTourWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,8 +215,6 @@
 				9C9F984A1703B3C90052E5AA /* ARFiles */,
 				9C9F98331703B3A10052E5AA /* VirtTourAppDelegate.h */,
 				9C9F98341703B3A10052E5AA /* VirtTourAppDelegate.m */,
-				9CAB9E791710E8FE00F1AF60 /* VirtTourWebViewController.h */,
-				9CAB9E7A1710E8FE00F1AF60 /* VirtTourWebViewController.m */,
 				9C9F983C1703B3A10052E5AA /* VirtTourViewController.h */,
 				9C9F983D1703B3A10052E5AA /* VirtTourViewController.m */,
 				774066981710DF4700CD91BC /* VirtTourSettingsViewController.h */,
@@ -386,7 +381,6 @@
 				772BEF85170F948500D3D600 /* DBWrapper.m in Sources */,
 				772BEF89170F9E5E00D3D600 /* ARDetailedViewController.m in Sources */,
 				7740669B1710DF4700CD91BC /* VirtTourSettingsViewController.m in Sources */,
-				9CAB9E7B1710E8FE00F1AF60 /* VirtTourWebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
