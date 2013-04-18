@@ -315,7 +315,7 @@
     return miles;
 }
 
-//bit of a clusterfuck, we need to re-order this code
+//bit of a, uh, problem - we need to re-order this code
 - (void)viewDidLoad
 {
     [super viewDidLoad];

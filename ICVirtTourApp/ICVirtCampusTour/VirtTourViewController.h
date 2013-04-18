@@ -21,7 +21,6 @@
 
 @class MapOverlay;
 @class MapOverlayView;
-@class VirtTourWebViewController;
 
 /**
  *	@brief	this view controller can set the contents of the detail view
@@ -34,6 +33,14 @@
 
 @interface VirtTourViewController : UIViewController<MKMapViewDelegate,CLLocationManagerDelegate>
 
+/**
+ *	@brief	gets heading using orientation information
+ *
+ *	@param 	heading 	device heading
+ *	@param 	orientation 	device orientation
+ *
+ *	@return	current heading
+ */
 -(float)heading:(float)heading fromOrientation:(UIDeviceOrientation)orientation;
 
 /**
@@ -77,14 +84,33 @@
  */
 -(void)resetData;
 
+/**
+ *	@brief	*Deprecated* map overlay which displays over the map view.
+ */
 @property (nonatomic, strong) MapOverlay *mapOverlay;
+/**
+ *	@brief	map overlay view which displays over map view
+ */
 @property (nonatomic, strong) MapOverlayView *mapOverlayView;
-@property (nonatomic, strong) VirtTourWebViewController *webView;
-
+/**
+ *	@brief	map view showing markers on a map
+ */
 @property (nonatomic, strong) MKMapView *theMapView;
+/**
+ *	@brief	location of the user
+ */
 @property (nonatomic, strong) MKUserLocation *userLocation;
+/**
+ *	@brief	motion manager which lets you react to changes in attitude
+ */
 @property (nonatomic, strong) CMMotionManager *manager;
+/**
+ *	@brief	lets you access location services
+ */
 @property (nonatomic, strong) CLLocationManager *locationManager;
+/**
+ *	@brief	displays the compass
+ */
 @property (nonatomic, strong) UIImageView *compassImage;
 /**
  *	@brief	instance of DBWrapper class. Allows convenient connection to database
@@ -99,8 +125,8 @@
  */
 @property (nonatomic, strong) NSMutableDictionary* nameToID;
 /**
- *	@brief	a dict with the types of buildings mapped to a boolean
- *  @detailed the types are all from the database, and the booleans are wrapped in NSNumbers to allow them to be inserted in the dict
+ *	@brief	a dict with the types of buildings mapped to a boolean 
+ *  @detailed the types are all from the database, and the booleans are wrapped in NSNumbers to allow them to be inserted in the dict. This is accessed by settingsViewController
  */
 @property (nonatomic, strong) NSMutableDictionary* buildingTypesDisplay;
 
@@ -108,18 +134,41 @@
  *	@brief	an array of the building names. Deprecate?
  */
 @property (nonatomic, strong) NSMutableArray *buildingNames;
+/**
+ *	@brief	whether or not the AR View has displayed
+ */
 @property (nonatomic) BOOL ARViewDisplayed;
 @end
 
+/**
+ *	@brief	lets VirtTourViewController control what the detailViewController displays
+ */
 @protocol detailViewControllerDelegate <NSObject>
 
+/**
+ *	@brief	sets the information shown in detail view
+ *
+ *	@param 	name 	Name of the marker
+ *	@param 	imageName 	name of the image (without the .PNG extension)
+ *	@param 	text 	description of the marker
+ */
 -(void)setCellDataWithName:(NSString *)name andImageName:(NSString *)imageName andText:(NSString *)text;
 
 @end
 
+/**
+ *	@brief	lets the settings view controller adjust settings in the VirtTourViewController
+ */
 @protocol settingsViewControllerDelegate <NSObject>
 
+/**
+ *	@brief	sets the map type
+ */
 -(void)setMapType:(MKMapType) mapType;
+/**
+ *	@brief	resets the markers in the virtTourViewController, displaying only layers selected in _buildingTypesDisplay
+ *  @detail allows the settings view controller to manage which layers are displayed
+ */
 -(void)resetData;
 
 @end
