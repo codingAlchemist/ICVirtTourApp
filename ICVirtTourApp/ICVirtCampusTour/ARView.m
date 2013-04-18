@@ -8,6 +8,7 @@
 #pragma mark Math utilities declaration
 
 #define DEGREES_TO_RADIANS (M_PI/180.0)
+#define ARVIEW_SEPARATION 20
 
 typedef float mat4f_t[16];	// 4x4 matrix in column major order
 typedef float vec4f_t[4];	// 4D vector
@@ -351,13 +352,13 @@ void ecefToEnu(double lat, double lon, double x, double y, double z, double xr, 
                     //if odd index - yPos += (i * self.bounds.size.height)
                     if(index % 2)
                     {
-                        yPos += (index * 10);
+                        yPos += (index * ARVIEW_SEPARATION);
                     }
                     
                     //find if even index - yPos -= (i * self.bounds.size.height)
                     else
                     {
-                        yPos -= (index * 10);
+                        yPos -= (index * ARVIEW_SEPARATION);
                     }
                     
                 }
