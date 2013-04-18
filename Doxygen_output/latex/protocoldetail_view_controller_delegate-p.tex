@@ -1,6 +1,15 @@
 \hypertarget{protocoldetail_view_controller_delegate-p}{\section{$<$detail\-View\-Controller\-Delegate$>$ Protocol Reference}
 \label{protocoldetail_view_controller_delegate-p}\index{$<$detail\-View\-Controller\-Delegate$>$@{$<$detail\-View\-Controller\-Delegate$>$}}
 }
+
+
+lets \hyperlink{interface_virt_tour_view_controller}{Virt\-Tour\-View\-Controller} control what the detail\-View\-Controller displays  
+
+
+
+
+{\ttfamily \#import $<$Virt\-Tour\-View\-Controller.\-h$>$}
+
 Inheritance diagram for $<$detail\-View\-Controller\-Delegate$>$\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,9 +22,40 @@ Inheritance diagram for $<$detail\-View\-Controller\-Delegate$>$\-:\begin{figure
 \hypertarget{protocoldetail_view_controller_delegate-p_a7db6bd35718ac78cf9d0ace37a65ff05}{(void) -\/ {\bfseries set\-Cell\-Data\-With\-Name\-:and\-Image\-Name\-:and\-Text\-:}}\label{protocoldetail_view_controller_delegate-p_a7db6bd35718ac78cf9d0ace37a65ff05}
 
 \item 
-\hypertarget{protocoldetail_view_controller_delegate-p_a7db6bd35718ac78cf9d0ace37a65ff05}{(void) -\/ {\bfseries set\-Cell\-Data\-With\-Name\-:and\-Image\-Name\-:and\-Text\-:}}\label{protocoldetail_view_controller_delegate-p_a7db6bd35718ac78cf9d0ace37a65ff05}
+(void) -\/ \hyperlink{protocoldetail_view_controller_delegate-p_a7db6bd35718ac78cf9d0ace37a65ff05}{set\-Cell\-Data\-With\-Name\-:and\-Image\-Name\-:and\-Text\-:}
+\begin{DoxyCompactList}\small\item\em sets the information shown in detail view \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\end{DoxyCompactItemize}
+
+\subsection{Detailed Description}
+lets \hyperlink{interface_virt_tour_view_controller}{Virt\-Tour\-View\-Controller} control what the detail\-View\-Controller displays 
+
+\subsection{Method Documentation}
+\hypertarget{protocoldetail_view_controller_delegate-p_a7db6bd35718ac78cf9d0ace37a65ff05}{\index{detail\-View\-Controller\-Delegate-\/p@{detail\-View\-Controller\-Delegate-\/p}!set\-Cell\-Data\-With\-Name\-:and\-Image\-Name\-:and\-Text\-:@{set\-Cell\-Data\-With\-Name\-:and\-Image\-Name\-:and\-Text\-:}}
+\index{set\-Cell\-Data\-With\-Name\-:and\-Image\-Name\-:and\-Text\-:@{set\-Cell\-Data\-With\-Name\-:and\-Image\-Name\-:and\-Text\-:}!detailViewControllerDelegate-p@{detail\-View\-Controller\-Delegate-\/p}}
+\subsubsection[{set\-Cell\-Data\-With\-Name\-:and\-Image\-Name\-:and\-Text\-:}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) set\-Cell\-Data\-With\-Name\-: 
+\begin{DoxyParamCaption}
+\item[{(N\-S\-String $\ast$)}]{name}
+\item[{andImageName:(N\-S\-String $\ast$)}]{image\-Name}
+\item[{andText:(N\-S\-String $\ast$)}]{text}
+\end{DoxyParamCaption}
+}}\label{protocoldetail_view_controller_delegate-p_a7db6bd35718ac78cf9d0ace37a65ff05}
+
+
+sets the information shown in detail view 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the marker \\
+\hline
+{\em image\-Name} & name of the image (without the .P\-N\-G extension) \\
+\hline
+{\em text} & description of the marker \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{interface_a_r_detailed_view_controller_a7db6bd35718ac78cf9d0ace37a65ff05}{A\-R\-Detailed\-View\-Controller}.
+
 
 
 The documentation for this protocol was generated from the following files\-:\begin{DoxyCompactItemize}

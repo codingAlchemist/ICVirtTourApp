@@ -37,7 +37,7 @@
  *
  *	@return	a dictionary with the data in a row
  */
--(NSDictionary*)getRowWithRowId:(NSInteger)rowId andCallback:(void(^)(void))errorCallback;;
+-(NSDictionary*)getRowWithRowId:(NSInteger)rowId andCallback:(void(^)(void))errorCallback;
 
 /**
  *	@brief	gets the text description for a given entry
@@ -46,7 +46,7 @@
  *
  *	@return	the text description
  */
--(NSDictionary*)getTextWithRowId:(NSInteger)rowId andCallback:(void(^)(void))errorCallback;;
+-(NSDictionary*)getTextWithRowId:(NSInteger)rowId andCallback:(void(^)(void))errorCallback;
 
 
 #pragma mark lower level methods
