@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 IC. All rights reserved.
 //
 
+//import statements which avoid circular refs
+
 #import "VirtTourViewController.h"
 
 //header for settings view
